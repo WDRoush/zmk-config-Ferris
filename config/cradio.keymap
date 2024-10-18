@@ -32,7 +32,14 @@
         };
     };
 
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        err {
+            bindings = <&bt BT_CLR_ALL>;
+            key-positions = <0 1 2 3>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
