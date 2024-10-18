@@ -32,14 +32,7 @@
         };
     };
 
-    combos {
-        compatible = "zmk,combos";
-
-        Btooth {
-            bindings = <&bt BT_NXT>;
-            key-positions = <13 31 16 32>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     keymap {
         compatible = "zmk,keymap";
