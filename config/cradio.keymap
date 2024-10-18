@@ -7,8 +7,8 @@
 
 // Home row mods macro
 
-#define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LALT k2  &ht LCTRL k3  &ht LGUI k4
-#define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RCTRL k2  &ht RALT k3  &ht RSHFT k4
+#define HRML(k1,k2,k3,k4) &mt LSHFT k1  &mt LALT k2  &mt LCTRL k3  &mt LGUI k4
+#define HRMR(k1,k2,k3,k4) &mt RGUI k1  &mt RCTRL k2  &mt RALT k3  &mt RSHFT k4
 
 / {
     behaviors {
@@ -36,13 +36,13 @@
         compatible = "zmk,keymap";
 
         layer_0 {
-            bindings = <
+    bindings = <
 &kp Q        &kp W        &kp F        &kp P        &kp B        &kp J      &kp L            &kp U        &kp Y        &kp SEMI
-&ht LS(A) A  &ht LA(R) R  &ht LC(S) S  &ht LG(T) T  &kp G        &kp M      &ht RG(N) N      &ht E RC(E)  &ht RA(I) I  &ht RS(O) O
+&mt LSHFT A  &mt LALT R   &mt LCTRL S  &mt LGUI T   &kp G        &kp M      &mt RGUI N       &mt RCTRL E  &mt RALT I   &mt RSHFT O
 &kp Z        &kp X        &kp C        &kp D        &kp V        &kp K      &kp H            &kp COMMA    &kp DOT      &kp FSLH
-                                       &lt 2 TAB    &kp ENTER    &kp SPACE  &lt 1 BACKSPACE
-            >;
-        };
+                                       &mt LALT SPACE    &lt 2 ENTER    &lt 1 BACKSPACE    &mt LGUI TAB
+    >;
+};
 
         layer_1 {
             bindings = <
