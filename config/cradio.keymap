@@ -36,13 +36,13 @@
         compatible = "zmk,keymap";
 
         layer_0 {
-    bindings = <
-&kp Q        &kp W        &kp F        &kp P        &kp B        &kp J      &kp L            &kp U        &kp Y        &kp SEMI
-&mt LSHFT A  &mt LALT R   &mt LCTRL S  &mt LGUI T   &kp G        &kp M      &mt RGUI N       &mt RCTRL E  &mt RALT I   &mt RSHFT O
-&kp Z        &kp X        &kp C        &kp D        &kp V        &kp K      &kp H            &kp COMMA    &kp DOT      &kp FSLH
-                                       &mt LALT SPACE    &lt 2 ENTER    &lt 1 BACKSPACE    &mt LGUI TAB
-    >;
-};
+            bindings = <
+&kp Q        &kp W       &kp F        &kp P       &kp B        &kp J      &kp L            &kp U        &kp Y       &kp SEMI
+&mt LSHFT A  &mt LALT R  &mt LCTRL S  &mt LGUI T  &kp G        &kp M      &mt RGUI N       &mt RCTRL E  &mt RALT I  &mt RSHFT O
+&kp Z        &kp X       &kp C        &kp D       &kp V        &kp K      &kp H            &kp COMMA    &kp DOT     &kp FSLH
+                                      &lt 3 TAB   &kp ENTER    &kp SPACE  &lt 1 BACKSPACE
+            >;
+        };
 
         layer_1 {
             bindings = <
