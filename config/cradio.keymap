@@ -6,17 +6,17 @@
 #include <dt-bindings/zmk/keys.h>
 
 // Home row mods macro
-
 #define HRML(k1,k2,k3,k4) &mt LSHFT k1  &mt LALT k2  &mt LCTRL k3  &mt LGUI k4
 #define HRMR(k1,k2,k3,k4) &mt RGUI k1  &mt RCTRL k2  &mt RALT k3  &mt RSHFT k4
 
 / {
     behaviors {
-    mt: mod_tap {
-        compatible = "zmk,behavior-mod-morph";
-        #binding-cells = <2>;
-        tapping-term-ms = <150>;
-        bindings = <&kp>, <&kp>;
+        mt: mod_tap {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            bindings = <&kp>, <&kp>;
+        };
     };
 
     conditional_layers {
@@ -28,51 +28,52 @@
         };
     };
 
-    
-      combos {
+    combos {
         compatible = "zmk,combos";
-      BluTth {
-         bindings = <&bt BT_NXT>;
-         key-positions = <13 16 32 31>;};};
-    
-behaviors {};
-keymap {
+
+        BluTth {
+            bindings = <&bt BT_NXT>;
+            key-positions = <13 16 32 31>;
+        };
+    };
+
+    keymap {
         compatible = "zmk,keymap";
 
         layer_0 {
             bindings = <
-&kp Q        &kp W       &kp F        &kp P       &kp B        &kp J      &kp L            &kp U        &kp Y       &kp SEMI
-&mt LSHFT A  &mt LALT R  &mt LCTRL S  &mt LGUI T  &kp G        &kp M      &mt RGUI N       &mt RCTRL E  &mt RALT I  &mt RSHFT O
-&kp Z        &kp X       &kp C        &kp D       &kp V        &kp K      &kp H            &kp COMMA    &kp DOT     &kp FSLH
-                                      &lt 3 TAB   &kp ENTER    &kp SPACE  &lt 1 BACKSPACE
->;
+                &kp Q        &kp W       &kp F        &kp P       &kp B        &kp J      &kp L            &kp U        &kp Y       &kp SEMI
+                &mt LSHFT A  &mt LALT R  &mt LCTRL S  &mt LGUI T  &kp G        &kp M      &mt RGUI N       &mt RCTRL E  &mt RALT I  &mt RSHFT O
+                &kp Z        &kp X       &kp C        &kp D       &kp V        &kp K      &kp H            &kp COMMA    &kp DOT     &kp FSLH
+                                                      &lt 3 TAB   &kp ENTER    &kp SPACE  &lt 1 BACKSPACE
+            >;
         };
 
         layer_1 {
             bindings = <
-&kp INS     &kp N1  &kp N2  &kp N3  &trans     &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &kp COLON
-&kp DEL     &kp N4  &kp N5  &kp N6  &trans     &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp SEMI
-&caps_word  &kp N7  &kp N8  &kp N9  &kp N0     &trans    &trans     &trans     &trans     &trans
-                            &trans  &kp ESC    &trans    &trans
->;
+                &kp INS     &kp N1  &kp N2  &kp N3  &trans     &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &kp COLON
+                &kp DEL     &kp N4  &kp N5  &kp N6  &trans     &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp SEMI
+                &caps_word  &kp N7  &kp N8  &kp N9  &kp N0     &trans    &trans     &trans     &trans     &trans
+                                        &trans    &kp ESC    &trans    &trans
+            >;
         };
 
         layer_2 {
             bindings = <
-&trans    &kp LBKT  &kp LBRC  &kp RBRC  &trans       &kp CARET  &kp LPAR   &kp RPAR   &kp RBKT  &kp TILDE
-&kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT    &kp ASTRK  &kp MINUS  &kp EQUAL  &kp BSLH  &kp GRAVE
-&trans    &trans    &trans    &trans    &trans       &kp AMPS   &kp UNDER  &kp PLUS   &kp PIPE  &trans
-                              &trans    &trans       &trans     &trans
->;
+                &trans    &kp LBKT  &kp LBRC  &kp RBRC  &trans       &kp CARET  &kp LPAR   &kp RPAR   &kp RBKT  &kp TILDE
+                &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT    &kp ASTRK  &kp MINUS  &kp EQUAL  &kp BSLH  &kp GRAVE
+                &trans    &trans    &trans    &trans    &trans       &kp AMPS   &kp UNDER  &kp PLUS   &kp PIPE  &trans
+                                            &trans    &trans       &trans     &trans
+            >;
         };
 
         layer_3 {
             bindings = <
-&sys_reset   &trans  &trans  &trans      &bt BT_SEL 0    &trans  &trans  &trans  &trans  &sys_reset
-&bootloader  &trans  &trans  &trans      &bt BT_SEL 1    &trans  &trans  &trans  &trans  &bootloader
-&trans       &trans  &trans  &bt BT_CLR  &bt BT_SEL 2    &trans  &trans  &trans  &trans  &trans
-                             &trans      &trans          &trans  &trans
->;
+                &sys_reset   &trans  &trans  &trans      &bt BT_SEL 0    &trans  &trans  &trans  &trans  &sys_reset
+                &bootloader  &trans  &trans  &trans      &bt BT_SEL 1    &trans  &trans  &trans  &trans  &bootloader
+                &trans       &trans  &trans  &bt BT_CLR  &bt BT_SEL 2    &trans  &trans  &trans  &trans  &trans
+                                         &trans      &trans          &trans  &trans
+            >;
         };
     };
 };
