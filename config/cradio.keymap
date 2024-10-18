@@ -2,10 +2,11 @@
 // SPDX-License-Identifier: MIT
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 
 // Home row mods macro
+
 #define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LALT k2  &ht LCTRL k3  &ht LGUI k4
 #define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RCTRL k2  &ht RALT k3  &ht RSHFT k4
 
@@ -24,6 +25,7 @@
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
+
         tri_layer {
             if-layers = <1 2>;
             then-layer = <3>;
@@ -32,39 +34,40 @@
 
     keymap {
         compatible = "zmk,keymap";
+
         layer_0 {
             bindings = <
-&kp Q  &kp W  &kp F  &kp P      &kp B        &kp J      &kp L            &kp U      &kp Y    &kp SEMI
-&kp A  &kp R  &kp S  &kp T      &kp G        &kp M      &kp N            &kp E      &kp I    &kp O
-&kp Z  &kp X  &kp C  &kp D      &kp V        &kp K      &kp H            &kp COMMA  &kp DOT  &kp FSLH
-                     &lt 2 TAB  &kp ENTER    &kp SPACE  &lt 1 BACKSPACE
+&kp Q        &kp W        &kp F        &kp P        &kp B        &kp J      &kp L            &kp U        &kp Y        &kp SEMI
+&ht LS(A) A  &ht LA(R) R  &ht LC(S) S  &ht LG(T) T  &kp G        &kp M      &ht RG(N) N      &ht E RC(E)  &ht RA(I) I  &ht RS(O) O
+&kp Z        &kp X        &kp C        &kp D        &kp V        &kp K      &kp H            &kp COMMA    &kp DOT      &kp FSLH
+                                       &lt 2 TAB    &kp ENTER    &kp SPACE  &lt 1 BACKSPACE
             >;
         };
 
         layer_1 {
             bindings = <
-&kp INS    &kp N1     &kp N2     &kp N3     &trans         &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &kp COLON
-          &kp DEL    &kp N4     &kp N5     &kp N6     &trans         &kp LEFT   &kp DOWN   &kp UP   &kp RIGHT   &kp SEMI
-          &caps_word  &kp N7     &kp N8     &kp N9     &kp N0         &trans     &trans     &trans     &trans     &trans
-          &trans     &kp ESC        &trans     &trans
+&kp INS     &kp N1  &kp N2  &kp N3  &trans     &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &kp COLON
+&kp DEL     &kp N4  &kp N5  &kp N6  &trans     &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp SEMI
+&caps_word  &kp N7  &kp N8  &kp N9  &kp N0     &trans    &trans     &trans     &trans     &trans
+                            &trans  &kp ESC    &trans    &trans
             >;
         };
 
         layer_2 {
             bindings = <
-&trans     &kp LBKT   &kp LBRC   &kp RBRC   &trans         &kp CARET  &kp LPAR   &kp RPAR   &kp RBKT   &kp TILDE
-          &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT      &kp ASTRK  &kp MINUS  &kp EQUAL  &kp BSLH   &kp GRAVE
-          &trans     &trans     &trans     &trans     &trans         &kp AMPS   &kp UNDER  &kp PLUS   &kp PIPE   &trans
-          &trans     &trans         &trans     &trans
+&trans    &kp LBKT  &kp LBRC  &kp RBRC  &trans       &kp CARET  &kp LPAR   &kp RPAR   &kp RBKT  &kp TILDE
+&kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT    &kp ASTRK  &kp MINUS  &kp EQUAL  &kp BSLH  &kp GRAVE
+&trans    &trans    &trans    &trans    &trans       &kp AMPS   &kp UNDER  &kp PLUS   &kp PIPE  &trans
+                              &trans    &trans       &trans     &trans
             >;
         };
 
         layer_3 {
             bindings = <
-&sys_reset  &trans     &trans     &trans    &bt BT_SEL 0    &trans     &trans     &trans     &trans    &sys_reset
-&bootloader  &trans     &trans     &trans    &bt BT_SEL 1    &trans     &trans     &trans     &trans    &bootloader
-          &trans     &trans     &trans    &bt BT_CLR &bt BT_SEL 2    &trans     &trans     &trans     &trans     &trans
-          &trans     &trans         &trans     &trans
+&sys_reset   &trans  &trans  &trans      &bt BT_SEL 0    &trans  &trans  &trans  &trans  &sys_reset
+&bootloader  &trans  &trans  &trans      &bt BT_SEL 1    &trans  &trans  &trans  &trans  &bootloader
+&trans       &trans  &trans  &bt BT_CLR  &bt BT_SEL 2    &trans  &trans  &trans  &trans  &trans
+                             &trans      &trans          &trans  &trans
             >;
         };
     };
