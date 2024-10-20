@@ -35,9 +35,14 @@
     combos {
         compatible = "zmk,combos";
 
-        Bluetooth {
-            bindings = <&bt BT_NXT>;
+        Bluetooth2 {
+            bindings = <&bt BT_SEL 1>;
             key-positions = <13 31 16 32>;
+        };
+
+        Bluetooth1 {
+            bindings = <&bt BT_SEL 0>;
+            key-positions = <30 13 16 33>;
         };
     };
 
